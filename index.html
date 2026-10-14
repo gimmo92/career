@@ -9,15 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4f6f9;
+      --bg: #ffffff;
       --ink: #1f2937;
-      --muted: #64748b;
-      --line: #e8edf3;
-      --blue: #2f6fe0;
+      --muted: #6b7280;
+      --line: #eef1f4;
+      --blue: #2f6fe4;
       --cyan: #3dcedf;
       --gold: #f2c14b;
       --up: #3b82f6;
       --down: #e11d6a;
+      --header: #f3f4f6;
+      --header-text: #98a2b3;
+      --text: #4b5563;
+      --pill: #2ea3f2;
+      --icon: #9aa3af;
+      --field: #e6e9ee;
     }
 
     * { box-sizing: border-box; }
@@ -48,63 +54,91 @@
     .field { display: flex; flex-direction: column; gap: 6px; min-width: 220px; }
     .field-search { flex: 1; max-width: 360px; }
     .field-role { min-width: 260px; }
-    .field-label { color: #98a2b3; font-size: 12px; font-weight: 500; }
+    .field-label { color: #98a2b3; font-size: 11px; font-weight: 500; letter-spacing: .02em; }
     .control {
       display: flex;
       align-items: center;
       gap: 8px;
-      height: 42px;
-      padding: 0 14px;
-      border: 1px solid #e6ebf2;
-      border-radius: 12px;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid #e6e9ee;
+      border-radius: 8px;
       background: #fff;
-      color: #94a3b8;
+      color: #9aa3af;
     }
-    .control:focus-within { border-color: #d5deea; box-shadow: 0 0 0 3px rgba(148, 163, 184, .16); }
+    .control:focus-within { border-color: #b7cffb; box-shadow: 0 0 0 3px rgba(47, 111, 228, .14); }
     .control input, .control select {
       width: 100%;
       border: 0;
       background: transparent;
-      color: #334155;
+      color: #4b5563;
       font-weight: 500;
     }
+    .control input::placeholder { color: #9aa3af; font-weight: 400; }
     .control input:focus, .control select:focus { outline: none; }
     .count { margin: 18px 0 8px; color: #94a3b8; font-size: 13px; }
 
     table { width: 100%; border-collapse: collapse; min-width: 680px; }
-    th {
+    thead th {
       text-align: left;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--line);
+      padding: 12px 16px;
+      background: #f3f4f6;
+      border-bottom: 1px solid #eef1f4;
       color: #98a2b3;
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: .06em;
+      letter-spacing: .07em;
       text-transform: uppercase;
     }
-    td { padding: 14px 12px; border-bottom: 1px solid #f1f5f9; font-size: 14.5px; vertical-align: middle; color: #4b5563; }
-    tbody tr { cursor: pointer; }
+    td { padding: 12px 16px; border-bottom: 1px solid #eef1f4; font-size: 14px; vertical-align: middle; color: #4b5563; }
+    tbody tr { cursor: pointer; background: #fff; }
     tbody tr:hover { background: #f8fafc; }
-    .strong { font-weight: 600; color: #374151; }
+    .person { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .mini-avatar {
+      width: 36px;
+      height: 36px;
+      flex: none;
+      border-radius: 8px;
+      border: 1px solid #e6e9ee;
+      background: #f3f4f6;
+      color: #9aa3af;
+      display: grid;
+      place-items: center;
+    }
+    .name { color: #2f6fe4; font-weight: 600; font-size: 14px; letter-spacing: -.01em; }
+    .surname { color: #4b5563; font-weight: 500; }
     .target { font-weight: 500; color: #374151; }
-    .gap-note { margin-top: 2px; font-size: 12px; font-weight: 600; }
-    .gap-note.bad { color: var(--down); }
-    .gap-note.ok { color: #059669; }
+    .role-cell { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .pill-gap { background: #2ea3f2; color: #fff; }
+    .pill-ok { background: #9aa3b2; color: #fff; }
     th:last-child, td:last-child { text-align: right; }
-    .actions { display: inline-flex; gap: 2px; }
+    .actions { display: inline-flex; align-items: center; gap: 14px; }
     .table-wrap { overflow-x: auto; }
     .icon-btn {
-      width: 32px;
-      height: 32px;
+      width: 20px;
+      height: 20px;
       padding: 0;
       border: 0;
-      border-radius: 8px;
+      border-radius: 4px;
       display: inline-grid;
       place-items: center;
       background: transparent;
-      color: #9aa3b2;
+      color: #9aa3af;
     }
-    .icon-btn:hover { background: #f3f4f6; color: #6b7280; }
+    .icon-btn:hover { background: transparent; color: #6b7280; }
 
     .btn { height: 36px; padding: 0 14px; border: 1px solid #e5eaf1; border-radius: 8px; background: #fff; color: #475569; font-size: 13px; font-weight: 600; white-space: nowrap; }
     .btn:hover { background: #f8fafc; }
@@ -434,17 +468,22 @@
       body.innerHTML = rows.map((person) => {
         const gaps = gapItems(person).length;
         const note = gaps === 0
-          ? `<div class="gap-note ok">Allineato</div>`
-          : `<div class="gap-note bad">${gaps} gap</div>`;
+          ? `<span class="pill pill-ok">Allineato</span>`
+          : `<span class="pill pill-gap">${gaps} gap</span>`;
         return `<tr data-id="${esc(person.id)}">
-          <td class="strong">${esc(person.firstName)}</td>
-          <td class="strong">${esc(person.lastName)}</td>
+          <td>
+            <div class="person">
+              <span class="mini-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="8.2" r="3.1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2v-.4c0-2.8 2.5-4.7 6.8-4.7s6.8 1.9 6.8 4.7v.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              <span class="name">${esc(person.firstName)}</span>
+            </div>
+          </td>
+          <td class="surname">${esc(person.lastName)}</td>
           <td>${esc(person.role)}</td>
-          <td><div class="target">${esc(person.potentialRole)}</div>${note}</td>
+          <td><div class="role-cell"><span class="target">${esc(person.potentialRole)}</span>${note}</div></td>
           <td><div class="actions">
-            <button type="button" class="icon-btn" data-action="view" data-id="${esc(person.id)}" title="Visualizza" aria-label="Visualizza"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M2.5 12S6.2 6.5 12 6.5 21.5 12 21.5 12 17.8 17.5 12 17.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
-            <button type="button" class="icon-btn" data-action="edit" data-id="${esc(person.id)}" title="Modifica" aria-label="Modifica"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 16.8V20h3.2L18.4 8.8l-3.2-3.2L4 16.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M13.8 7l3.2 3.2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
-            <button type="button" class="icon-btn" data-action="delete" data-id="${esc(person.id)}" title="Elimina" aria-label="Elimina"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 7h14M9.5 7V5h5v2M8 7l.7 12h6.6L16 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="icon-btn" data-action="view" data-id="${esc(person.id)}" title="Visualizza" aria-label="Visualizza"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M2.5 12S6.2 6.5 12 6.5 21.5 12 21.5 12 17.8 17.5 12 17.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+            <button type="button" class="icon-btn" data-action="edit" data-id="${esc(person.id)}" title="Modifica" aria-label="Modifica"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 16.8V20h3.2L18.4 8.8l-3.2-3.2L4 16.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M13.8 7l3.2 3.2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+            <button type="button" class="icon-btn" data-action="delete" data-id="${esc(person.id)}" title="Elimina" aria-label="Elimina"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 7h14M9.5 7V5h5v2M8 7l.7 12h6.6L16 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div></td>
         </tr>`;
       }).join("");
