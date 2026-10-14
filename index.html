@@ -14,10 +14,9 @@
       --muted: #6b7280;
       --line: #eef1f4;
       --blue: #2f6fe4;
-      --cyan: #3dcedf;
-      --gold: #f2c14b;
-      --up: #3b82f6;
-      --down: #e11d6a;
+      --cyan: #2ea3f2;
+      --up: #2f6fe4;
+      --down: #2ea3f2;
       --header: #f3f4f6;
       --header-text: #98a2b3;
       --text: #4b5563;
@@ -146,8 +145,8 @@
     .btn-primary:hover { background: #255fcc; }
     .btn-danger { border-color: #fecdd3; color: #e11d48; }
     .btn-danger:hover { background: #fff1f4; }
-    .btn-plan { height: 34px; padding: 0 12px; border-radius: 9px; border: 1px solid #c9dafb; background: #fff; color: var(--blue); }
-    .btn-plan.is-on { background: #ecfdf3; color: #047857; border-color: #bbf7d0; }
+    .btn-plan { height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid #e6e9ee; background: #fff; color: var(--blue); }
+    .btn-plan.is-on { background: var(--blue); color: #fff; border-color: var(--blue); }
 
     .empty { padding: 56px 16px; text-align: center; }
     .empty h2 { margin: 0 0 6px; font-size: 18px; }
@@ -163,35 +162,34 @@
       gap: 6px;
       height: 36px;
       padding: 0 12px;
-      border-radius: 10px;
-      border: 1px solid #e5eaf1;
+      border-radius: 8px;
+      border: 1px solid #e6e9ee;
       background: #fff;
-      color: #64748b;
+      color: #6b7280;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: .06em;
       text-transform: uppercase;
-      box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
     }
     .back:hover { background: #f8fafc; }
     .detail-title { margin: 0 auto; max-width: 760px; color: var(--blue); font-size: 20px; line-height: 1.35; }
     .legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; color: var(--muted); font-size: 13px; }
     .legend span { display: inline-flex; align-items: center; gap: 6px; }
     .dot { width: 9px; height: 9px; border-radius: 50%; }
-    .dot.req { background: var(--cyan); }
-    .dot.own { background: var(--gold); }
+    .dot.req { background: #2ea3f2; }
+    .dot.own { background: #2f6fe4; }
 
     .compat { display: grid; grid-template-columns: minmax(300px, 440px) minmax(320px, 1fr); gap: 8px 12px; align-items: center; margin-top: 28px; }
     .who { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; }
-    .avatar { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; }
-    .who strong { font-size: 16px; }
+    .who .mini-avatar { width: 40px; height: 40px; }
+    .who .name { font-size: 16px; }
     .skill { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 2px; }
-    .skill + .skill { border-top: 1px solid #eef2f6; }
-    .skill-name { color: #334155; font-size: 14.5px; font-weight: 600; }
+    .skill + .skill { border-top: 1px solid #eef1f4; }
+    .skill-name { color: #2f6fe4; font-size: 14.5px; font-weight: 600; }
     .skill-type { margin-top: 2px; color: #94a3b8; font-size: 12px; }
-    .score { display: inline-flex; align-items: center; gap: 4px; min-width: 42px; justify-content: flex-end; font-size: 18px; font-weight: 700; }
-    .score.up { color: var(--up); }
-    .score.down { color: var(--down); }
+    .score { display: inline-flex; align-items: center; gap: 4px; min-width: 42px; justify-content: flex-end; font-size: 16px; font-weight: 700; }
+    .score.up { color: #2f6fe4; }
+    .score.down { height: 22px; padding: 0 7px; border-radius: 4px; background: #2ea3f2; color: #fff; font-size: 13px; }
     .chart { display: flex; justify-content: center; }
     .chart svg { width: min(540px, 100%); height: auto; }
     .chart text { font-family: Inter, "Segoe UI", sans-serif; }
@@ -201,20 +199,20 @@
     .courses { margin-top: 28px; padding-top: 26px; border-top: 1px solid #eef2f6; }
     .courses h2 { margin: 0; font-size: 18px; }
     .lead { margin: 6px 0 16px; color: var(--muted); font-size: 14px; line-height: 1.45; }
-    .aligned { margin: 0; padding: 16px 18px; border-radius: 12px; background: #f0fdf4; color: #166534; }
-    .gap-card { margin-top: 12px; padding: 16px 18px 6px; border: 1px solid #e7edf4; border-radius: 14px; background: #fbfcfe; }
+    .aligned { margin: 0; padding: 16px 18px; border-radius: 8px; background: #f3f4f6; color: #4b5563; }
+    .gap-card { margin-top: 12px; padding: 16px 18px 6px; border: 1px solid #eef1f4; border-radius: 8px; background: #fff; }
     .gap-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .gap-top h3 { margin: 0; font-size: 15px; }
-    .priority { border-radius: 999px; padding: 3px 8px; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-    .priority.high { background: #fff1f4; color: var(--down); }
-    .priority.mid { background: #fff7ed; color: #c2410c; }
+    .gap-top h3 { margin: 0; font-size: 15px; color: #2f6fe4; font-weight: 600; }
+    .priority { border-radius: 4px; padding: 3px 8px; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #fff; }
+    .priority.high { background: #2ea3f2; }
+    .priority.mid { background: #2f6fe4; }
     .delta { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
-    .delta strong { color: #334155; }
+    .delta strong { color: #4b5563; }
     .course-rows { list-style: none; margin: 8px 0 0; padding: 0; }
     .course-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 0; border-top: 1px solid #eef2f6; }
-    .course-title { display: block; color: #1f2937; font-weight: 600; }
+    .course-title { display: block; color: #2f6fe4; font-weight: 600; }
     .course-meta { display: block; margin-top: 3px; color: #94a3b8; font-size: 12.5px; }
-    .residual { margin: 2px 0 10px; color: #b45309; font-size: 12.5px; }
+    .residual { margin: 2px 0 10px; color: #6b7280; font-size: 12.5px; }
 
     dialog { width: min(640px, calc(100vw - 32px)); padding: 0; border: 0; border-radius: 16px; box-shadow: 0 24px 80px rgba(15, 23, 42, .22); }
     dialog::backdrop { background: rgba(15, 23, 42, .45); }
@@ -519,8 +517,8 @@
       }).join("");
       return `<svg viewBox="0 0 560 460" role="img" aria-label="Radar delle competenze richieste e possedute">
         ${rings}${axes}
-        <polygon points="${requiredShape}" fill="rgba(61,206,223,.38)" stroke="#2ec4e6" stroke-width="2" stroke-linejoin="round"/>
-        <polygon points="${ownedShape}" fill="rgba(242,193,75,.45)" stroke="#e0b02a" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="${requiredShape}" fill="rgba(46,163,242,.28)" stroke="#2ea3f2" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="${ownedShape}" fill="rgba(47,111,228,.28)" stroke="#2f6fe4" stroke-width="2" stroke-linejoin="round"/>
         ${labels}${levels}
       </svg>`;
     }
@@ -602,8 +600,8 @@
         <div class="compat">
           <div>
             <div class="who">
-              <div class="avatar" style="background:${esc(person.color)}">${esc(initials(person))}</div>
-              <strong>${esc(person.firstName)} ${esc(person.lastName)}</strong>
+              <span class="mini-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="8.2" r="3.1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.2 19.2v-.4c0-2.8 2.5-4.7 6.8-4.7s6.8 1.9 6.8 4.7v.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              <strong class="name">${esc(person.firstName)} ${esc(person.lastName)}</strong>
             </div>
             <div>${skillsHtml(person)}</div>
           </div>
